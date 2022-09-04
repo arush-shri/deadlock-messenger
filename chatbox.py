@@ -307,13 +307,17 @@ ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 ran_color = random.choice(colors)
 
-arg = sys.argv[1]
-if (arg == "-h" or arg == "help"):
-	help_option = '''chatbox.py 'username'        -->        Set your username\nsend 'file name'        -->        Send file to contact\nrecord()        -->        Start recording the chat\nhelp()        -->        Show help option during chat\nend()        -->        Exit the messenger'''
-	print (colored(help_option, 'blue'))
-else:
-	username = arg
-	try:
-		main()
-	except:
-		exit()
+try:
+	arg = sys.argv[1]
+	if (arg == "-h" or arg == "help"):
+		help_option = '''chatbox.py 'username'        -->        Set your username\nsend 'file name'        -->        Send file to contact\nrecord()        -->        Start recording the chat\nhelp()        -->        Show help option during chat\nend()        -->        Exit the messenger'''
+		print (colored(help_option, 'blue'))
+	else:
+		username = arg
+		try:
+			main()
+		except:
+			exit()
+except:
+	print (colored("An argument is required", 'red'))
+	print (colored("Try chatbox.py 'username' or '-h'", 'blue'))
