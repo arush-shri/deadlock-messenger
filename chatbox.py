@@ -21,7 +21,7 @@ def generate():
 	with open('sending_key.txt', 'rb')as f:
 		pubkey = f.read()
 		os.remove('sending_key.txt')
-	with open('prikey.pem', 'rb')as f:
+	with open('receiving_key.pem', 'rb')as f:
 		prikey = rsa.PrivateKey.load_pkcs1(f.read())
 
 #RECORDING
