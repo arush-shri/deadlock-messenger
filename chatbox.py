@@ -315,7 +315,7 @@ ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 ran_color = random.choice(colors)
 
-__version__ = "1.1.2"
+__version__ = "1.2.2"
 
 try:
 	arg = sys.argv[1]
