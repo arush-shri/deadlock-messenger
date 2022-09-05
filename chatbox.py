@@ -172,7 +172,7 @@ def recfile(org_f):
 			org_data = rsa.decrypt(data,prikey)
 			org_file.write(org_data)
 	print (colored("\n[+]File received", 'magenta'))
-	print ("You: ", end = "")
+	#print ("You: ", end = "")
 	org_file.close()
 	rece = True
 
@@ -232,7 +232,7 @@ def receiver():
 		else:
 			c = os.get_terminal_size().columns
 			c = int(c/2)
-			print ("\n" + " "*c + result + "\nYou: ", end = "")
+			print ("\n" + " "*c + result)
 
 
 #MESSENGER
