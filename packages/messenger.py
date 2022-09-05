@@ -291,8 +291,9 @@ def main():
 	global RPORT
 	global username
 	global rec_cmd
+	
 	rec_cmd = False
-
+	print ("version: " + __version__)
 	print ("Your IP: ")
 	LHOST = os.system("hostname -I")
 	username = input("Username: ") 
@@ -314,3 +315,4 @@ fonts = ["banner","big","bubble","digital","emboss","emboss2","future","letter",
 ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 ran_color = random.choice(colors)
+__version__ = "1.1.2"
