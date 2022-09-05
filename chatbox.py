@@ -204,8 +204,11 @@ def receiver():
 
 	while (True):
 		if(rece):
-			rec()
-			oprt = result.replace(othername + ": ", "")
+			try:
+				rec()
+				oprt = result.replace(othername + ": ", "")
+			except:
+				break
 		if(rec_cmd):
 			record.write(result + "\n")
 		if(oprt == "record()"):
@@ -220,7 +223,7 @@ def receiver():
 			continue
 		elif (oprt == "end()"):
 			print (colored("[!!] Connection terminated", 'red'))
-			send(username + ": " + "end()")
+			#send(username + ": " + "end()")
 			try:
 				target.close()
 			except:
