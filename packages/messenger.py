@@ -20,7 +20,7 @@ def generate():
 	with open('sending_key.txt', 'rb')as f:
 		pubkey = f.read()
 		os.remove('sending_key.txt')
-	with open('prikey.pem', 'rb')as f:
+	with open('receiving_key.pem', 'rb')as f:
 		prikey = rsa.PrivateKey.load_pkcs1(f.read())
 
 #RECORDING
@@ -314,4 +314,4 @@ fonts = ["banner","big","bubble","digital","emboss","emboss2","future","letter",
 ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 ran_color = random.choice(colors)
-__version__ = "1.1.2"
+__version__ = "1.2.2"
