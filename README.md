@@ -21,7 +21,7 @@ To send files just type 'send() file_name'
 ```bash
   sudo python3 setup.py
 ```
-Install necessary packages
+Installs necessary packages
 ```bash
   deadlock.py
 ```
