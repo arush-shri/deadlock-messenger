@@ -98,11 +98,22 @@ def sender():
 	while(True):
 		chat = input("You: ")
 		msg = username + ": " + chat
-		try:
-			send(msg)
-		except:
-			break
-
+		if (chat[:4] == "send"):
+			try:
+				ini = chat[5:].split('/')
+				fin = ini[-1]
+				send(username + ": " + fin)
+				sendfile(chat[5:])
+			except:
+				print (colored("failed to send",'red'))
+		elif (chat == "help()"):
+			help_option = '''send 'file name'        -->        Send file to contact\nrecord()        -->        Start recording the chat\nend()        -->        Exit the messenger'''
+			print (colored(help_option, 'blue'))
+		else:
+			try:
+				send(msg)
+			except:
+				break
 		if (rec_cmd):
 			record.write(msg + "\n")
 		if (chat == "record()"):
@@ -116,14 +127,7 @@ def sender():
 			except:
 				sock.close()
 			break
-		elif (chat[:4] == "send"):
-			try:
-				sendfile(chat[5:])
-			except:
-				print (colored("failed to send",'red'))
-		elif (chat == "help()"):
-			help_option = '''send 'file name'        -->        Send file to contact\nrecord()        -->        Start recording the chat\nend()        -->        Exit the messenger'''
-			print (colored(help_option, 'blue'))
+		
 
 #RECEIVING
 def rec():
