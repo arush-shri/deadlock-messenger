@@ -84,6 +84,7 @@ def sender():
 	global username
 	global pubkey
 	global target
+	global s
 	global sock
 
 	generate()
@@ -120,9 +121,9 @@ def sender():
 			recorder()
 		elif (chat == "end()"):
 			print (colored("[!!] Connection terminated", 'red'))
-			time.sleep(1)
 			try:
 				target.close()
+				s.close()
 			except:
 				sock.close()
 			break
@@ -179,6 +180,7 @@ def receiver():
 	global record
 	global rec_cmd
 	global target
+	global s
 	global sock
 	global result
 	global prikey
@@ -225,6 +227,7 @@ def receiver():
 			#send(username + ": " + "end()")
 			try:
 				target.close()
+				s.close()
 			except:
 				sock.close()
 			break
