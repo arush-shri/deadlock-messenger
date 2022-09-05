@@ -101,7 +101,7 @@ def sender():
 		if (chat[:4] == "send"):
 			try:
 				ini = chat[5:].split('/')
-				fin = ini[-1]
+				ini = ini[-1]
 				send(username + ": send " + fin)
 				sendfile(chat[5:])
 			except:
