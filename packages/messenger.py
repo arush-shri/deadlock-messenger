@@ -13,7 +13,6 @@ import pyfiglet
 from termcolor import colored
 from packages import chat_keygen
 
-os.system("clear")
 #KEY LOADER
 def generate():
 	global pubkey
