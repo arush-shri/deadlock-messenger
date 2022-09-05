@@ -294,7 +294,7 @@ def main():
 	
 	rec_cmd = False
 	print ("version: " + __version__)
-	print ("Your IP: ")
+	print ("\n\nYour IP: ")
 	LHOST = os.system("hostname -I")
 	LHOST = str(LHOST)
 	LPORT = 54321
