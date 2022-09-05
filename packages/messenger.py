@@ -98,11 +98,22 @@ def sender():
 	while(True):
 		chat = input("You: ")
 		msg = username + ": " + chat
-		try:
-			send(msg)
-		except:
-			break
-
+		if (chat[:4] == "send"):
+			try:
+				ini = chat[5:].split('/')
+				ini = ini[-1]
+				send(username + ": send " + fin)
+				sendfile(chat[5:])
+			except:
+				print (colored("failed to send",'red'))
+		elif (chat == "help()"):
+			help_option = '''send 'file name'        -->        Send file to contact\nrecord()        -->        Start recording the chat\nend()        -->        Exit the messenger'''
+			print (colored(help_option, 'blue'))
+		else:
+			try:
+				send(msg)
+			except:
+				break
 		if (rec_cmd):
 			record.write(msg + "\n")
 		if (chat == "record()"):
@@ -116,14 +127,7 @@ def sender():
 			except:
 				sock.close()
 			break
-		elif (chat[:4] == "send"):
-			try:
-				sendfile(chat[5:])
-			except:
-				print (colored("failed to send",'red'))
-		elif (chat == "help()"):
-			help_option = '''send 'file name'        -->        Send file to contact\nrecord()        -->        Start recording the chat\nend()        -->        Exit the messenger'''
-			print (colored(help_option, 'blue'))
+		
 
 #RECEIVING
 def rec():
@@ -167,7 +171,7 @@ def recfile(org_f):
 			data = base64.b64decode(data)
 			org_data = rsa.decrypt(data,prikey)
 			org_file.write(org_data)
-	print ("\n[+]File received", 'magenta')
+	print (colored("\n[+]File received", 'magenta'))
 	print ("You: ", end = "")
 	org_file.close()
 	rece = True
@@ -200,8 +204,11 @@ def receiver():
 
 	while (True):
 		if(rece):
-			rec()
-			oprt = result.replace(othername + ": ", "")
+			try:
+				rec()
+				oprt = result.replace(othername + ": ", "")
+			except:
+				break
 		if(rec_cmd):
 			record.write(result + "\n")
 		if(oprt == "record()"):
@@ -216,7 +223,7 @@ def receiver():
 			continue
 		elif (oprt == "end()"):
 			print (colored("[!!] Connection terminated", 'red'))
-			send(username + ": " + "end()")
+			#send(username + ": " + "end()")
 			try:
 				target.close()
 			except:
@@ -288,6 +295,7 @@ def main():
 
 	print ("Your IP: ")
 	LHOST = os.system("hostname -I")
+	username = input("Username: ") 
 	LHOST = str(LHOST)
 	LPORT = 54321
 	RHOST = input("Contact's IP: ")
