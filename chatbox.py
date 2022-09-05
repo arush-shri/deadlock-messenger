@@ -102,7 +102,7 @@ def sender():
 			try:
 				ini = chat[5:].split('/')
 				fin = ini[-1]
-				send(username + ": " + fin)
+				send(username + ": send " + fin)
 				sendfile(chat[5:])
 			except:
 				print (colored("failed to send",'red'))
