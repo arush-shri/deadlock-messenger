@@ -171,7 +171,7 @@ def recfile(org_f):
 			data = base64.b64decode(data)
 			org_data = rsa.decrypt(data,prikey)
 			org_file.write(org_data)
-	print ("\n[+]File received", 'magenta')
+	print (colored("\n[+]File received", 'magenta'))
 	print ("You: ", end = "")
 	org_file.close()
 	rece = True
