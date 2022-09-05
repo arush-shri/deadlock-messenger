@@ -291,8 +291,9 @@ def main():
 	global RPORT
 	global username
 	global rec_cmd
+	
 	rec_cmd = False
-
+	print ("version: " + __version__)
 	print ("Your IP: ")
 	LHOST = os.system("hostname -I")
 	LHOST = str(LHOST)
@@ -314,6 +315,8 @@ ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 ran_color = random.choice(colors)
 
+__version__ = "1.1.2"
+
 try:
 	arg = sys.argv[1]
 	if (arg == "-h" or arg == "help"):
@@ -322,6 +325,7 @@ try:
 	else:
 		username = arg
 		try:
+			banner()
 			main()
 		except:
 			exit()
