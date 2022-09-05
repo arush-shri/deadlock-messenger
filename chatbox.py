@@ -85,6 +85,7 @@ def sender():
 	global username
 	global pubkey
 	global target
+	global s
 	global sock
 
 	generate()
@@ -121,9 +122,9 @@ def sender():
 			recorder()
 		elif (chat == "end()"):
 			print (colored("[!!] Connection terminated", 'red'))
-			time.sleep(1)
 			try:
 				target.close()
+				s.close()
 			except:
 				sock.close()
 			break
@@ -180,6 +181,7 @@ def receiver():
 	global record
 	global rec_cmd
 	global target
+	global s
 	global sock
 	global result
 	global prikey
@@ -226,6 +228,7 @@ def receiver():
 			#send(username + ": " + "end()")
 			try:
 				target.close()
+				s.close()
 			except:
 				sock.close()
 			break
@@ -256,13 +259,13 @@ def connector():
 	ran_num-=1
 	while (ran_num >= 1):
 		try:
+			time.sleep(1)
 			sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 			sock.connect((RHOST, RPORT))
 			print (colored("[+] Connection successful: " + str(RHOST), 'green'))
 			thread()
 			break
 		except:
-			time.sleep(1)
 			if (ran_num >= 1):
 				connector()
 	if (Lrun):
