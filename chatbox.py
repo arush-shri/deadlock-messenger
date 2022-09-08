@@ -103,7 +103,7 @@ def sender():
 			try:
 				ini = chat[5:].split('/')
 				ini = ini[-1]
-				send(username + ": send " + fin)
+				send(username + ": send " + ini)
 				sendfile(chat[5:])
 			except:
 				print (colored("failed to send",'red'))
@@ -259,7 +259,6 @@ def connector():
 	ran_num-=1
 	while (ran_num >= 1):
 		try:
-			time.sleep(1)
 			sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 			sock.connect((RHOST, RPORT))
 			print (colored("[+] Connection successful: " + str(RHOST), 'green'))
@@ -312,7 +311,7 @@ def banner():
 	banner = pyfiglet.figlet_format("CHATBOX",font = ran_font)
 	print (colored(banner, ran_color))
 
-ran_num = random.randint(2,9)
+ran_num = random.randint(2,5)
 fonts = ["banner","big","bubble","digital","emboss","emboss2","future","letter","mini","pagga","script","shadow","slant","small","smblock"]
 ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
