@@ -8,32 +8,30 @@ import os
 from packages import tenc
 from packages import filenc
 from packages import generator
-from packages import messenger
 
 #FONT SELECTION
 fonts = ["banner","big","bubble","digital","emboss","emboss2","future","letter","mini","pagga","script","shadow","slant","small","smblock"]
-ran_font = random.choice(fonts)
 
 #COLOR SELECTION
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
-ran_color = random.choice(colors)
 
 #CHOICE
 def choice():
-	print ("1.Text Cryptography\n2.File Cryptography\n3.Chat Box\n4.Key Generation\n5.Exit")
+	print ("1.Text Cryptography\n2.File Cryptography\n3.Key Generation\n4.Exit")
 	choice = input()
 	if (choice == '1'):
 		tenco()
 	if (choice =='2'):
 		filenco()
 	if (choice == '3'):
-		msg()
-	if (choice == '4'):
 		generate()
-	if (choice == '5'):
+	if (choice == '4'):
 		exit()
 #BANNER
 def banner():
+	global ran_color
+	ran_font = random.choice(fonts)
+	ran_color = random.choice(colors)
 	banner = pyfiglet.figlet_format("DEADLOCK\nCHATBOX",font = ran_font)
 	print (colored(banner, ran_color))
 
@@ -67,6 +65,9 @@ def generate():
 	generator.generate()
 	choice()
 
+global ran_color
+__version__ = 1.2.1
 os.system("clear")
 banner()
+print (colored(__version__, ran_color))
 choice()
