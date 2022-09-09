@@ -40,6 +40,7 @@ def recorder():
 	minute = str(samay.minute)
 	rec_file = othername + "_D" + day + "_M" +  month + "_h" + hour + "_m" + minute
 	record = open(locate + rec_file + ".txt", 'w')
+	print (colored("[*]Recording started", 'magenta'))
 
 #SENDING
 def send(chat):
@@ -317,7 +318,7 @@ ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 ran_color = random.choice(colors)
 
-__version__ = "1.2.2"
+__version__ = "1.2.5"
 
 try:
 	arg = sys.argv[1]
