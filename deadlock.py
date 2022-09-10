@@ -18,6 +18,7 @@ colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 #CHOICE
 def choice():
 	print ("1.Text Cryptography\n2.File Cryptography\n3.Key Generation\n4.Exit")
+	print (colored("To use messenger type 'chatbox.py -h' in terminal", 'yellow'))
 	choice = input()
 	if (choice == '1'):
 		tenco()
@@ -34,6 +35,8 @@ def banner():
 	ran_color = random.choice(colors)
 	banner = pyfiglet.figlet_format("DEADLOCK\nCHATBOX",font = ran_font)
 	print (colored(banner, ran_color))
+	print (colored(__version__, ran_color))
+	print (colored("If using for first time generate a key first", 'magenta'))
 
 #TEXT CRYPTOGRAPHY
 def tenco():
@@ -51,23 +54,13 @@ def filenco():
 	os.system("clear")
 	choice()
 
-#MESSENGER
-def msg():
-	os.system("clear")
-	messenger.banner()
-	messenger.main()
-	os.system("clear")
-	choice()
-
 #KEY GENERATION
 def generate():
 	os.system("clear")
 	generator.generate()
 	choice()
 
-global ran_color
 __version__ = 1.2.1
 os.system("clear")
 banner()
-print (colored(__version__, ran_color))
 choice()
