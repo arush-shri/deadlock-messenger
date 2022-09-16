@@ -7,16 +7,16 @@ import random
 from termcolor import colored
 
 
-#FONT SELECTION
+#FONTS
 fonts = ["banner","big","block","bubble","circle","digital","emboss","emboss2","future","ivrit","lean","letter","mini","mnemonic","pagga","script","shadow","slant","small","smblock","smbraille","smscript","smshadow","smslant","standard","term","wideterm"]
-ran_font = random.choice(fonts)
 
-#COLOR SELECTION
+#COLORS
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
-ran_color = random.choice(colors)
 
 #BANNER
 def banner():
+	ran_font = random.choice(fonts)
+	ran_color = random.choice(colors)
 	banner = pyfiglet.figlet_format("FILE\nENCRYPTION\nDECRYPTION",font = ran_font)
 	print (colored(banner,ran_color))
 
