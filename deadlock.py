@@ -19,7 +19,7 @@ colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 def choice():
 	print ("1.Text Cryptography\n2.File Cryptography\n3.Key Generation\n4.Exit")
 	print (colored("Generate a key if using for first time", 'blue'))
-	print (colored("To use messenger type 'chatbox.py -h' in terminal", 'yellow'))
+	print (colored("\n\nTo use messenger type 'chatbox.py -h' in terminal", 'yellow'))
 	choice = input()
 	if (choice == '1'):
 		tenco()
