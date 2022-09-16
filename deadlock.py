@@ -18,6 +18,7 @@ colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 #CHOICE
 def choice():
 	print ("1.Text Cryptography\n2.File Cryptography\n3.Key Generation\n4.Exit")
+	print (colored("Generate a key if using for first time", 'blue'))
 	print (colored("To use messenger type 'chatbox.py -h' in terminal", 'yellow'))
 	choice = input()
 	if (choice == '1'):
@@ -33,7 +34,7 @@ def banner():
 	global ran_color
 	ran_font = random.choice(fonts)
 	ran_color = random.choice(colors)
-	banner = pyfiglet.figlet_format("DEADLOCK\nCHATBOX",font = ran_font)
+	banner = pyfiglet.figlet_format("DEADLOCK",font = ran_font)
 	print (colored(banner, ran_color))
 	print (colored(__version__, ran_color))
 	print (colored("If using for first time generate a key first", 'magenta'))
@@ -60,7 +61,7 @@ def generate():
 	generator.generate()
 	choice()
 
-__version__ = 1.2.1
+__version__ = 1.2.2
 os.system("clear")
 banner()
 choice()
