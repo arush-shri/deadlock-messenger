@@ -8,16 +8,16 @@ from termcolor import colored
 import os
 import datetime
 
-#FONT SELECTION
+#FONTS
 fonts = ["banner","big","block","bubble","circle","digital","emboss","emboss2","future","ivrit","lean","letter","mini","mnemonic","pagga","script","shadow","slant","small","smblock","smbraille","smscript","smshadow","smslant","standard","term","wideterm"]
-ran_font = random.choice(fonts)
 
-#COLOR SELECTION
+#COLORS
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
-ran_color = random.choice(colors)
 
 #BANNER
 def banner():
+	ran_font = random.choice(fonts)
+	ran_color = random.choice(colors)
 	banner = pyfiglet.figlet_format("TEXT\nENCRYPTION\nDECRYPTION",font = ran_font)
 	print (colored(banner,ran_color))
 
@@ -44,11 +44,25 @@ def getPubKey():
 		PubKey = rsa.PublicKey.load_pkcs1(f.read())
 	return PubKey
 
+#FILE OPENING
+def file_open():
+	global file
+	user = os.getlogin()
+	locate = "/home/" + user + "/Documents/encrypted_text/"
+	if not os.path.exists(locate):
+		os.makedirs(locate)
+	samay = datetime.datetime.now()
+	day = str(samay.day)
+	hour = str(samay.hour)
+	min = str(samay.minute)
+	file = "enc_d" + day + "_h" +  hour + "_m" + min + ".txt"
 
 #ENCRYPTION
 def Encrypter():
+	global file
 	text = input("Text: ")
 	PubKey = getPubKey()
+	file_open()
 	try:
 		cipher = rsa.encrypt(text.encode('utf-8'), PubKey)
 		with open(locate + file, "wb") as en:
@@ -73,13 +87,3 @@ def Decrypter():
 		print (colored("[!!]Decryption failed",'red'))
 	de.close()
 	choice()
-
-user = os.getlogin()
-locate = "/home/" + user + "/Documents/encrypted_text/"
-if not os.path.exists(locate):
-	os.makedirs(locate)
-samay = datetime.datetime.now()
-day = str(samay.day)
-hour = str(samay.hour)
-min = str(samay.minute)
-file = "enc_d" + day + "_h" +  hour + "_m" + min + ".txt"
