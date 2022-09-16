@@ -8,9 +8,11 @@ def installer():
 		try:
 			os.system("pip install termcolor")
 		except:
-			print (colored("[!!]Unable to install 'termcolor'", 'red'))
-			print (colored("Try manually 'pip install termcolor'",'blue'))
-			from termcolor import colored
+			print ("[!!]Unable to install 'termcolor'")
+			print ("Try manually 'pip install termcolor'")
+
+from termcolor import colored
+
 	try:
 		import rsa
 	except:
