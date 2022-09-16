@@ -5,7 +5,6 @@ import pyfiglet
 import base64
 import random
 from termcolor import colored
-from cryptography.fernet import Fernet
 
 
 #FONT SELECTION
