@@ -11,7 +11,7 @@ def installer():
 			print ("[!!]Unable to install 'termcolor'")
 			print ("Try manually 'pip install termcolor'")
 
-from termcolor import colored
+	from termcolor import colored
 
 	try:
 		import rsa
