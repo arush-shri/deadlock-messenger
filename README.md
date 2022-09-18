@@ -16,17 +16,17 @@ Keys for text and file encryption are generated within the deadlock program. Enc
 ## Installation
 
 ```bash
-  sudo python3 setup.py
+sudo python3 setup.py
 ```
 Installs necessary python packages and make program executable from everywhere
 
 ```bash
-  sudo chatbox.py
+sudo chatbox.py
 ```
 To run messenger
 
 ```bash
-  sudo deadlock.py
+sudo deadlock.py
 ```
 To use text or file cryptography.
 
