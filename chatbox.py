@@ -296,7 +296,6 @@ def main():
 	global rec_cmd
 	
 	rec_cmd = False
-	print ("version: " + __version__)
 	print ("\n\nYour IP: ")
 	LHOST = os.system("hostname -I")
 	LHOST = str(LHOST)
@@ -311,6 +310,7 @@ def main():
 def banner():
 	banner = pyfiglet.figlet_format("CHATBOX",font = ran_font)
 	print (colored(banner, ran_color))
+	print (colored("version: " + __version__, ran_color))
 
 ran_num = random.randint(2,5)
 fonts = ["banner","big","bubble","digital","emboss","emboss2","future","letter","mini","pagga","script","shadow","slant","small","smblock"]
