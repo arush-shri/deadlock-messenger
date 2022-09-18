@@ -4,7 +4,7 @@
 
 Currently available for linux users.
 
-A python based text and file encryption tool and end-to-end encrypted messenger. It uses RSA asymmetric encryption to encrypt text and file and your messages. 
+A python based end-to-end encrypted messenger and text and file encryption tool. It uses RSA asymmetric encryption to encrypt text and file and your messages. 
 Keys for text and file encryption are generated within the deadlock program.
 
 Encrypted text is saved in a text file in 'Documents/encrypted_text' and while decrypting the encrypted bytes are read from that file and dislpayed after decryption.
@@ -22,14 +22,16 @@ To send files just type 'send() file_name'
   sudo python3 setup.py
 ```
 Installs necessary packages
-```bash
-  deadlock.py
-```
-To use text or file encryption you can run tool from anywhere.
+
 ```bash
   chatbox.py
 ```
-To run messenger only without going through deadlock
+To run messenger
+
+```bash
+  deadlock.py
+```
+To use text or file encryption from anywhere.
 
 ## Support
 
@@ -37,4 +39,4 @@ For support, email deadlock_chatbox@proton.me
 
 Stay tuned for regular updates
 
-Last update: 5-9-2022
+Last update: 17-9-2022
