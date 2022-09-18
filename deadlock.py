@@ -37,7 +37,6 @@ def banner():
 	banner = pyfiglet.figlet_format("DEADLOCK",font = ran_font)
 	print (colored(banner, ran_color))
 	print (colored(__version__, ran_color))
-	print (colored("If using for first time generate a key first", 'magenta'))
 
 #TEXT CRYPTOGRAPHY
 def tenco():
