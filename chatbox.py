@@ -320,7 +320,7 @@ ran_color = random.choice(colors)
 
 __version__ = "1.2.5"
 
-try:
+if (len(sys.argv) > 1):
 	arg = sys.argv[1]
 	if (arg == "-h" or arg == "help"):
 		help_option = '''chatbox.py 'username'        -->        Set your username\nsend 'file name'        -->        Send file to contact\nrecord()        -->        Start recording the chat\nhelp()        -->        Show help option during chat\nend()        -->        Exit the messenger'''
@@ -332,6 +332,6 @@ try:
 			main()
 		except:
 			exit()
-except:
+else:
 	print (colored("[!!]An argument is required", 'red'))
-	print (colored("[*]Try chatbox.py '-h' for help", 'yellow'))
+	print ("[*]Try chatbox.py '-h' for help")
