@@ -21,12 +21,12 @@ Keys for text and file encryption are generated within the deadlock program. Enc
 Installs necessary python packages and make program executable from everywhere
 
 ```bash
-  chatbox.py
+  sudo chatbox.py
 ```
 To run messenger
 
 ```bash
-  deadlock.py
+  sudo deadlock.py
 ```
 To use text or file cryptography.
 
