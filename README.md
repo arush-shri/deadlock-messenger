@@ -36,4 +36,4 @@ For support, email deadlock_chatbox@proton.me
 
 Stay tuned for regular updates
 
-Last update: 17-9-2022
+Last update: 18-9-2022
