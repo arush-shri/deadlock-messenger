@@ -333,5 +333,5 @@ try:
 		except:
 			exit()
 except:
-	print (colored("An argument is required", 'red'))
-	print (colored("Try chatbox.py 'username' or '-h'", 'blue'))
+	print (colored("[!!]An argument is required", 'red'))
+	print (colored("[*]Try chatbox.py '-h' for help", 'yellow'))
