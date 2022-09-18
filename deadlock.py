@@ -36,7 +36,7 @@ def banner():
 	ran_color = random.choice(colors)
 	banner = pyfiglet.figlet_format("DEADLOCK",font = ran_font)
 	print (colored(banner, ran_color))
-	print (colored(__version__, ran_color))
+	print (colored("version: " + __version__, ran_color))
 
 #TEXT CRYPTOGRAPHY
 def tenco():
