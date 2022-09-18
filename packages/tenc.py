@@ -47,6 +47,7 @@ def getPubKey():
 #FILE OPENING
 def file_open():
 	global file
+	global locate
 	user = os.getlogin()
 	locate = "/home/" + user + "/Documents/encrypted_text/"
 	if not os.path.exists(locate):
@@ -60,6 +61,7 @@ def file_open():
 #ENCRYPTION
 def Encrypter():
 	global file
+	global locate
 	text = input("Text: ")
 	PubKey = getPubKey()
 	file_open()
