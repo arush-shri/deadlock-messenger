@@ -61,7 +61,7 @@ def generate():
 	generator.generate()
 	choice()
 
-__version__ = 1.2.2
+__version__ = "1.2.2"
 os.system("clear")
 banner()
 choice()
