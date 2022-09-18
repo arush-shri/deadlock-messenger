@@ -8,10 +8,9 @@ A python based end-to-end encrypted messenger and text and file cryptography too
 
 Messenger generates its own unique key for every session and then sends it automatically to your contact. You can send text and file messages using the messenger. You can run messenger from any directory, just type "chatbox.py" in terminal. 
 
-To send files just type "send 'file path'" and files received are saved in 'Documents\files' directory Chats of every session will be deleted as the connection is terminated but if you want to save your chats just run 'record()' command while chatting it will start recording messages sent and received from there on and recording will be saved in 'Documents\recording' directory.
+To send files just type "send 'file path'" and files received are saved in 'Documents\files' directory. Chats of every session will be deleted as the connection is terminated but if you want to save your chats just run 'record()' command while chatting it will start recording messages sent and received from there on and recording will be saved in 'Documents\recording' directory.
 
-Keys for text and file encryption are generated within the deadlock program. Encrypted text is saved in a text file in 'Documents/encrypted_text' and while decrypting the encrypted bytes are read from that file and dislpayed after decryption.
-Files are encrypted and saved by file's original name with .encrypted extension.
+Keys for text and file encryption are generated within the deadlock program. Encrypted text is saved in a text file in 'Documents/encrypted_text' and for decrypting just specify path of that text file. Files are encrypted and saved in same directory by file's original name with .encrypted extension.
 
 
 ## Installation
