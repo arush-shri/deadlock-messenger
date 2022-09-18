@@ -296,7 +296,7 @@ def main():
 	global rec_cmd
 	
 	rec_cmd = False
-	print ("\n\nYour IP: ")
+	print ("\n\nYour IP: ", end = '')
 	LHOST = os.system("hostname -I")
 	LHOST = str(LHOST)
 	LPORT = 54321
