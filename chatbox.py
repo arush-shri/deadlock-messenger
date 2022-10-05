@@ -254,9 +254,7 @@ def thread():
 def connector():
 	global ran_num
 	global sock
-	global Lrun
-
-	Lrun = True
+	
 	ran_num-=1
 	while (ran_num >= 1):
 		try:
@@ -268,8 +266,6 @@ def connector():
 		except:
 			if (ran_num >= 1):
 				connector()
-	if (Lrun):
-		listener()
 
 def listener():
 	global ip
@@ -294,7 +290,9 @@ def main():
 	global RPORT
 	global username
 	global rec_cmd
-	
+	global Lrun
+
+	Lrun = True
 	rec_cmd = False
 	print ("\n\nYour IP: ", end = '')
 	LHOST = os.system("hostname -I")
@@ -305,6 +303,8 @@ def main():
 
 	print (colored("[+] Connecting...", 'yellow'))
 	connector()
+	if (Lrun):
+		listener()
 	return
 
 def banner():
@@ -318,7 +318,7 @@ ran_font = random.choice(fonts)
 colors = ["grey","red","green","yellow","blue","magenta","cyan","white"]
 ran_color = random.choice(colors)
 
-__version__ = "1.2.5"
+__version__ = "1.2.6"
 
 if (len(sys.argv) > 1):
 	arg = sys.argv[1]
